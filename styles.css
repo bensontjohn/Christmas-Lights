@@ -1,0 +1,80 @@
+body {
+  background: #111;
+  margin: 0;
+}
+
+h1 {
+  color: #fff;
+  position: relative;
+  margin-top: 200px;
+  font-family: 'Risque', cursive;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-size: 4em;
+  text-shadow: 0px 0px 8px rgba(255,65,185,1);
+}
+
+#thread {
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: -80px;
+  border-bottom: 3px solid #222;
+  height: 100px;
+}
+
+#thread li {
+  position: relative;
+  list-style: none;
+  margin: 0 15px;
+  padding: 0;
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  top: 102px;
+  background: #fff;
+  animation-name: even-flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+#thread li:nth-child(odd) {
+  animation-name: odd-flash;
+}
+
+#thread li:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  border-radius: 4px;
+  top: -5px;
+  left: 0;
+  background: #444;
+}
+
+@keyframes even-flash {
+  0%, 100% {
+    background: rgba(171,8,0,1);
+    box-shadow: 0px 2px 20px 4px rgba(171,8,0,1);
+  }
+  50% {
+    background: rgba(9,171,44,0.5);
+    box-shadow: 0px 2px 20px 4px rgba(9,171,44,0.3);
+  }
+}
+
+@keyframes odd-flash {
+   50% {
+    background: rgba(171,135,7,1);
+    box-shadow: 0px 2px 20px 4px rgba(171,135,7,1);
+  }
+  0%, 100% {
+    background: rgba(11,77,171,0.5);
+    box-shadow: 0px 2px 20px 4px rgba(11,77,171,0.3);
+  }
+}
